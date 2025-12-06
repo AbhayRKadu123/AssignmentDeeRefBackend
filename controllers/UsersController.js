@@ -161,7 +161,7 @@ const GetAllUsers = async (req, res) => {
 const GetAllMessages = async (req, res) => {
     try {
         const page = Number(req.query.page) || 1;
-const limit = Number(req.query.limit) || 10;   // default 20 messages
+const limit = Number(req.query.limit) || 20;   // default 20 messages
 const skip = (page - 1) * limit;
 let ChannelName=req?.query?.ChannelName.trim();
 console.log('ChannelName',ChannelName)

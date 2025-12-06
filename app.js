@@ -28,6 +28,7 @@ const io = new Server(server, {
 let UserObj = {}
 // Simple socket.io connection
 io.on("connection", (socket) => {
+  
   // console.log("UserObj[socket.id]:",typeof UserObj[socket.id]);
   // if(UserObj[socket.id]==undefined){
   // UserObj[socket.id]='abhaykadu'
@@ -128,6 +129,10 @@ io.on("connection", (socket) => {
 });
 
 // Routers
+app.get("/ping", (req, res) => {
+  res.send("alive");
+});
+
 app.use("/", UserRouter)
 app.use("/Auth", AuthRouter)
 
